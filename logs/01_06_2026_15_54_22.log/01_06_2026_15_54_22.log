@@ -1,0 +1,4 @@
+[2026-01-06 15:54:26,969] 15 root - INFO - Initiate the data ingestion
+[2026-01-06 15:54:30,990] 73 root - INFO - Performed train test split
+[2026-01-06 15:54:31,176] 90 root - INFO - Train and test files saved
+[2026-01-06 15:54:31,177] 17 root - INFO - Data Ingestion completed

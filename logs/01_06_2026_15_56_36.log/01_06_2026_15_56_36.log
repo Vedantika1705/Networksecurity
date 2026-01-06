@@ -1,0 +1,7 @@
+[2026-01-06 15:56:41,474] 15 root - INFO - Initiate the data ingestion
+[2026-01-06 15:56:45,340] 73 root - INFO - Performed train test split
+[2026-01-06 15:56:45,539] 90 root - INFO - Train and test files saved
+[2026-01-06 15:56:45,540] 17 root - INFO - Data Ingestion completed
+[2026-01-06 15:56:45,599] 22 root - INFO - Initiate the data validation
+[2026-01-06 15:56:45,715] 35 root - INFO - Required number of columns:2
+[2026-01-06 15:56:45,715] 36 root - INFO - data frame has columns:31
