@@ -44,36 +44,36 @@ It predicts phishing or malicious URLs using a trained ML model and provides a *
 
 ## 🚀 How to Run
 
-### 1️⃣ Clone the repository
+## 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/Vedantika1705/Networksecurity.git
 cd Networksecurity
 
 
-# 2️⃣ Install dependencies
+## 2️⃣ Install dependencies
 pip install -r requirements.txt
 
-# 3️⃣ Start FastAPI app
+## 3️⃣ Start FastAPI app
 python app.py
 
-# 4️⃣ Open in browser
+## 4️⃣ Open in browser
  Go to http://127.0.0.1:8000 → home page
  Go to http://127.0.0.1:8000/docs → OpenAPI docs for API testing
 
-# 5️⃣ Upload CSV
+## 5️⃣ Upload CSV
  Use /predict route in docs or via the home page form
  Example CSV: phisingData.csv
 
-# 6️⃣ Output
+## 6️⃣ Output
  Full predictions: prediction_output/output.csv
  Example predictions: prediction_output/example_output.csv
  Table image: images/prediction_table.png
 
-# 🔍 Demo Screenshots
+## 🔍 Demo Screenshots
  Prediction Table Example (images/prediction_table.png)
  Example Prediction CSV (prediction_output/example_output.csv) contains the first 10 predictions
 
-# 📁 Folder Structure
+## 📁 Folder Structure
  Networksecurity/
  ├─ app.py
  ├─ final_model/
