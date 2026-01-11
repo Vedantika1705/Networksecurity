@@ -15,13 +15,17 @@ It predicts phishing or malicious URLs using a trained ML model and provides a *
 ---
 
 ## 📊 Features
-- **Web interface** using FastAPI
-- **CSV upload** for bulk predictions
-- **Automatic preprocessing** and column validation
-- **Prediction output** saved in:
-  - `prediction_output/output.csv` → full predictions
-  - `prediction_output/example_output.csv` → first 10 predictions
-- **Prediction table image** saved in `images/prediction_table.png`
+- ## 📸 Screenshots / Demo
+
+### 🔹 Prediction Output Table
+This table is automatically generated after CSV upload and prediction.
+
+![Prediction Table](images/prediction_table.png)
+
+### 🔹 Prediction Output Files
+- **Full predictions:** [`prediction_output/output.csv`](prediction_output/output.csv)
+- **Sample output (first 10 rows):** [`prediction_output/example_output.csv`](prediction_output/example_output.csv)
+
 
 ---
 
