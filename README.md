@@ -74,18 +74,19 @@ python app.py
  Example Prediction CSV (prediction_output/example_output.csv) contains the first 10 predictions
 
 ## 📁 Folder Structure
- Networksecurity/
- ├─ app.py
- ├─ final_model/
- │  ├─ model.pkl
- │  └─ preprocessor.pkl
- ├─ prediction_output/
- │  ├─ example_output.csv
- │  └─ output.csv
- ├─ images/
- │  └─ prediction_table.png
- ├─ templates/
- │  └─ table.html
- └─ requirements.txt
+Networksecurity/
+├─ app.py
+├─ final_model/
+│  ├─ model.pkl
+│  └─ preprocessor.pkl
+├─ prediction_output/
+│  ├─ example_output.csv
+│  └─ output.csv
+├─ images/
+│  └─ prediction_table.png
+├─ templates/
+│  └─ table.html
+└─ requirements.txt
+
 
 # This project demonstrates a complete ML workflow from CSV ingestion → preprocessing → prediction → visualization → deployment via FastAPI.
