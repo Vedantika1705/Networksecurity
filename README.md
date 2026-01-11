@@ -49,7 +49,7 @@ It predicts phishing or malicious URLs using a trained ML model and provides a *
 git clone https://github.com/Vedantika1705/Networksecurity.git
 cd Networksecurity
 
-
+```
 ## 2️⃣ Install dependencies
 pip install -r requirements.txt
 
