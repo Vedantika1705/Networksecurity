@@ -30,6 +30,12 @@ print(mongo_db_url)
 ca = certifi.where()
 client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
 
+print("🚀 Network Security ML App is starting...")
+print(f"📂 Connected to MongoDB database: {DATA_INGESTION_DATABASE_NAME}")
+print(f"📂 Using collection: {DATA_INGESTION_COLLECTION_NAME}")
+print("✅ FastAPI app initialized")
+
+
 database = client[DATA_INGESTION_DATABASE_NAME]
 collection = database[DATA_INGESTION_COLLECTION_NAME]
 
@@ -82,6 +88,15 @@ async def train_route():
 async def predict_route(request: Request, file: UploadFile = File(...)):
     try:
         df = pd.read_csv(file.file)
+        print(f"📄 Uploaded file: {file.filename}")
+        print(f"✅ Loaded {len(df)} rows of data for prediction")
+        print("🔍 Sample data:")
+        print(df.head())
+
+         # Drop the target or any unseen columns (like 'Result')
+        if "Result" in df.columns:
+            df = df.drop("Result", axis=1)
+            print("⚠️ Dropped column 'Result' for prediction")
 
         preprocessor = load_object("final_model/preprocessor.pkl")
         model = load_object("final_model/model.pkl")
@@ -93,7 +108,24 @@ async def predict_route(request: Request, file: UploadFile = File(...)):
 
         y_pred = network_model.predict(df)
         df["predicted_column"] = y_pred
+        example_output = df.head(10)
+        example_output.to_csv("prediction_output/example_output.csv", index=False)
+        print("✅ Saved example predictions to 'prediction_output/example_output.csv'")
 
+        import matplotlib.pyplot as plt
+
+        def save_table_image(df):
+            fig, ax = plt.subplots(figsize=(12, 2))  # adjust size as needed
+            ax.axis('tight')
+            ax.axis('off')
+            table = ax.table(cellText=df.head(10).values,
+                             colLabels=df.head(10).columns,
+                             loc='center')
+            plt.savefig("images/prediction_table.png", bbox_inches='tight')
+            plt.close()
+            print("📸 Saved prediction table image to 'images/prediction_table.png'")
+
+        save_table_image(df)
         df.to_csv("prediction_output/output.csv", index=False)
 
         table_html = df.to_html(classes="table table-striped")
